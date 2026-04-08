@@ -22,14 +22,13 @@ export default function Home() {
     setIsLoading(true);
     setError(null);
 
-    // Construir un prompt profesional para flyers turísticos modernos y elegantes
     const fullPrompt = `Crea un flyer turístico moderno y elegante. 
     Estilo: minimalista, tipografía limpia, colores que transmitan serenidad y lujo.
     Composición: el texto debe estar armoniosamente integrado, destacando el mensaje principal.
     Usa la imagen que te proporciono como fondo o elemento visual principal.
     Texto a incluir: "${promptText}"
     Formato: vertical, apto para impresión y digital.
-    NO agreges marcas de agua ni textos genéricos. Diseño profesional y atractivo.`;
+    NO agregues marcas de agua ni textos genéricos. Diseño profesional y atractivo.`;
 
     try {
       const response = await fetch('/api/generate-flyer', {
@@ -61,7 +60,6 @@ export default function Home() {
         </header>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Columna izquierda: entrada */}
           <div className="space-y-6">
             <div className="bg-white rounded-2xl shadow-lg p-6">
               <h2 className="text-xl font-semibold mb-4">📸 Imagen base</h2>
@@ -95,7 +93,6 @@ export default function Home() {
             )}
           </div>
 
-          {/* Columna derecha: vista previa y descarga */}
           <div className="bg-white rounded-2xl shadow-lg p-6">
             <h2 className="text-xl font-semibold mb-4">🖼️ Flyer generado</h2>
             {generatedFlyer ? (
